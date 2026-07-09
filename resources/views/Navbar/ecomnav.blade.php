@@ -52,6 +52,7 @@
             justify-content: space-between;
             padding: 0 40px;
             width: 100%;
+            margin-top: -44px;
         }
 
         /* Dropdowns bar */
@@ -549,7 +550,7 @@
         }
 
         /* Announcement Bar CSS from Vogue Layout */
-        .announcement-bar {
+        /* .announcement-bar {
             background-color: #000;
             color: #fff;
             text-align: center;
@@ -561,7 +562,7 @@
             width: 100%;
             top: 0;
             z-index: 101;
-        }
+        } */
 
         main {
             margin-top: 110px; /* Accounts for fixed announcement + navbar */
@@ -571,9 +572,6 @@
 
 <body>
 
-    <div class="announcement-bar">
-        Free Shipping on Orders Over $75 • Use Code: <span>STYLE26</span>
-    </div>
 
     <header class="header-main" id="mainHeader">
         <div class="header-top-row">

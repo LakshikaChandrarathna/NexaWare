@@ -34,7 +34,7 @@
         /* -----------------------------------------
            2. ANNOUNCEMENT BAR & NAVBAR
         ----------------------------------------- */
-        .announcement-bar {
+        /* .announcement-bar {
             background-color: var(--color-dark);
             color: var(--color-white);
             font-size: 11px;
@@ -43,11 +43,11 @@
             padding: 10px 20px;
             text-align: center;
             font-weight: 500;
-        }
+        } */
 
-        .announcement-bar span {
+        /* .announcement-bar span {
             color: var(--color-accent);
-        }
+        } */
 
         .navbar {
             position: sticky;
@@ -138,6 +138,7 @@
             align-items: center;
             padding: 0 6%;
             overflow: hidden;
+            margin-top: -112px;
         }
 
         .hero-bg {

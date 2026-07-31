@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EcomSorderController;
 use App\Http\Controllers\EcomsellerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EcomforgetpasswordController;
+use App\Http\Controllers\EcomproductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,3 +42,25 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buyerdashboard',[ProfileController::class, 'dashboarddetails']);
 });
 Route::post('/update-profile', [ProfileController::class, 'updateProfile']);
+
+Route::post('/forget-password/send-code', [EcomforgetpasswordController::class, 'sendVerificationCode']);
+Route::post('/forget-password/verify-otp', [EcomforgetpasswordController::class, 'verifyOTP']);
+Route::post('/forget-password/reset', [EcomforgetpasswordController::class, 'resetPassword']);
+Route::get('/ecomforgetpassword', function () {
+    return view('ecomforgetpassword');
+});
+
+
+
+Route::get('/selleraddproduct', [EcomproductController::class, 'index']);
+Route::post('/products/store', [EcomproductController::class, 'store']);
+Route::post('/products/update/{id}', [EcomproductController::class, 'update']);
+Route::delete('/products/delete/{id}', [EcomproductController::class, 'destroy']);
+
+Route::post('/seller/products/quick-add-stock', [EcomproductController::class, 'quickAddStock']);
+Route::get('/sellerstock', [EcomproductController::class, 'sellerstock']);
+Route::post('/seller/stock-update', [EcomproductController::class, 'stockupdate']);
+Route::delete('/seller/stock-remove/{id}', [EcomproductController::class, 'stockremove']);
+Route::get('/shop', [EcomproductController::class, 'shopIndex'])->name('shop.page');
+Route::post('/meta-groups/store-inline', [EcomproductController::class, 'storeInlineMeta']);
+

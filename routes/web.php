@@ -7,6 +7,7 @@ use App\Http\Controllers\EcomsellerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EcomforgetpasswordController;
 use App\Http\Controllers\EcomproductController;
+use App\Http\Controllers\EcoPaymentInfoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,4 +64,13 @@ Route::post('/seller/stock-update', [EcomproductController::class, 'stockupdate'
 Route::delete('/seller/stock-remove/{id}', [EcomproductController::class, 'stockremove']);
 Route::get('/shop', [EcomproductController::class, 'shopIndex'])->name('shop.page');
 Route::post('/meta-groups/store-inline', [EcomproductController::class, 'storeInlineMeta']);
+
+
+Route::middleware(['auth'])->group(function () {
+   
+    Route::get('/buyerpayment', [EcoPaymentInfoController::class, 'paymentview']);
+    
+  
+    Route::post('/save-payment-info', [EcoPaymentInfoController::class, 'savePaymentInfo']);
+});
 

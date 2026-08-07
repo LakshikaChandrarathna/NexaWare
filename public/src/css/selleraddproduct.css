@@ -1,0 +1,501 @@
+        :root {
+            --primary-blue: #071835;
+            --light-highlight: #b5cbf0;
+            --dark-navy: #071835;
+            --deep-background: #010813;
+            --text-main: #01060e;
+            --white: #ffffff;
+            --black: #000000;
+            --gray-bg: #f3f4f6;
+            --gray-border: #e5e7eb;
+            --text-muted: #6b7280;
+
+            /* Structural mappings for layout stability */
+            --bg-color: var(--gray-bg);
+            --card-bg: var(--white);
+            --text-sub: var(--text-muted);
+            --border-color: var(--gray-border);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-left: -98px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .btn-add-main {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-add-main:hover {
+            background-color: var(--dark-navy);
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(1, 8, 19, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 450px;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease-out;
+            color: var(--text-main);
+        }
+
+        @keyframes fadeIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        .add-card {
+            text-align: center;
+        }
+
+        .icon-box {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .add-text {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .description {
+            color: var(--text-sub);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            outline: none;
+            background: var(--gray-bg);
+            color: var(--text-main);
+        }
+
+        .upload-box {
+            /* border: 2px dashed var(--light-highlight); */
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            color: var(--text-sub);
+        }
+
+        .upload-box:hover {
+            border-color: var(--primary-blue);
+            background-color: var(--gray-bg);
+        }
+
+        #image-preview,
+        #edit-image-preview {
+            width: 100%;
+            max-height: 120px;
+            object-fit: contain;
+            display: none;
+            margin-top: 10px;
+        }
+
+        .btn-submitp {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-submitp:hover {
+            background-color: var(--dark-navy);
+            opacity: 0.9;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px;
+            background: var(--gray-bg);
+            color: var(--text-sub);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .td-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .editbutton {
+            color: var(--primary-blue);
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .deletebutton {
+            color: var(--text-muted);
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .card {
+                margin-left: -15px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+
+            .btn-add-main {
+                justify-content: center;
+            }
+
+            .modal-content {
+                padding: 20px;
+                width: 79%;
+                margin-top: -160px;
+                background: var(--white);
+            }
+
+            td,
+            th {
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            .breadcrumb {
+                margin-top: 10px;
+                margin-left: 0;
+                font-size: 13px;
+                padding-left: 5px;
+                padding-top: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card-title {
+                font-size: 16px;
+            }
+
+            td,
+            th {
+                padding: 8px 5px;
+                font-size: 12px;
+            }
+
+            .td-img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .breadcrumb {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+            margin-top: -37px;
+            margin-left: -18px;
+        }
+
+        .breadcrumb span {
+            margin-right: 5px;
+        }
+
+        .breadcrumb .arrow {
+            color: var(--text-muted);
+        }
+
+        .breadcrumb .active {
+            color: var(--black);
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            thead {
+                display: none;
+            }
+
+            tbody tr {
+                display: block;
+                background: var(--white);
+                margin-bottom: 15px;
+                padding: 6px;
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+            }
+
+            tbody td {
+                display: flex;
+                justify-content: space-between;
+                padding: 8px 0;
+                border-bottom: 1px solid var(--gray-bg);
+            }
+
+            tbody td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: var(--text-sub);
+            }
+        }
+
+        .meta-field-wrapper {
+            margin-bottom: 15px;
+        }
+
+        .input-with-btn {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .input-with-btn select {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 38px;
+        }
+
+        .add-small-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            width: 38px;
+            height: 38px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inline-add-container {
+            margin-top: 8px;
+            display: flex;
+            gap: 6px;
+            width: 100%;
+        }
+
+        .inline-input-field {
+            flex: 1;
+            padding: 6px 10px;
+            border: 1px solid #28a745;
+            border-radius: 4px;
+            height: 34px;
+            font-size: 13px;
+        }
+
+        .inline-submit-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0 12px;
+            cursor: pointer;
+            font-weight: bold;
+            height: 34px;
+        }
+
+        .inline-cancel-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0 12px;
+            cursor: pointer;
+            height: 34px;
+        }
+
+        .tags-input-wrapper {
+            border: 1px solid #ccc;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            background: #fff;
+            margin-bottom: 15px;
+            align-items: center;
+            cursor: text;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* ඇතුලේ හැදෙන ලස්සන Badges (Tags) */
+        .tag-badge {
+            background: #ff6f00;
+            /* High-contrast Orange */
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .tag-badge .remove-tag {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .tag-badge .remove-tag:hover {
+            opacity: 1;
+        }
+
+
+        .tags-input-wrapper input {
+            border: none !important;
+            outline: none !important;
+            flex: 1;
+            min-width: 120px;
+            padding: 4px 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+        }

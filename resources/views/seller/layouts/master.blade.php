@@ -8,26 +8,24 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <style>
-        .material-symbols-outlined {
+    .material-symbols-outlined {
         font-size: 24px;
         color: #ffffff;
-       
         transition: color 0.3s ease;
     }
     :root {
-        --primary-blue: #071835;
-        --light-highlight: #b5cbf0;
-        --dark-navy: #071835;
-        --deep-background: #010813;
-        --text-main: #01060e;
+        --primary-purple: #987D9A;
+        --secondary-mauve: #BB9AB1;
+        --light-peach: #EECEB9;
+        --soft-yellow: #FEFBD8;
+        --text-dark: #2B2129;
         --white: #ffffff;
         --black: #000000;
-        --gray-bg: #f3f4f6;
-        --gray-border: #e5e7eb;
-        --text-muted: #6b7280;
+        --gray-border: #e2d8e0;
+        --text-muted: #786877;
 
-        --bg-color: var(--gray-bg);
-        --sidebar-bg: var(--white);
+        --bg-color: var(--soft-yellow);
+        --sidebar-bg: var(--primary-purple);
         --border-color: var(--gray-border);
         --sidebar-width: 260px;
         --header-height: 70px;
@@ -38,7 +36,7 @@
         background-color: var(--bg-color);
         margin: 0;
         display: flex;
-        color: var(--text-main);
+        color: var(--text-dark);
     }
 
     /* --- Header Styling --- */
@@ -48,17 +46,17 @@
         right: 0;
         left: 0;
         height: var(--header-height);
-        background: black;
+        background: var(--primary-purple);
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0 30px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 10px rgba(152, 125, 154, 0.15);
         z-index: 1000;
     }
 
     .logo {
-        background: var(--primary-blue);
+        background: var(--secondary-mauve);
         color: var(--white);
         font-weight: 900;
         font-size: 24px;
@@ -68,11 +66,10 @@
         display: inline-block;
     }
 
-
     .search-container {
         flex: 0 1 500px;
         display: flex;
-        border: 2px solid var(--primary-blue);
+        border: 2px solid var(--secondary-mauve);
         border-radius: 25px;
         overflow: hidden;
         background: var(--white);
@@ -85,11 +82,11 @@
         outline: none;
         font-size: 14px;
         background: var(--white);
-        color: var(--text-main);
+        color: var(--text-dark);
     }
 
     .search-btn {
-        background: var(--primary-blue);
+        background: var(--secondary-mauve);
         color: var(--white);
         border: none;
         padding: 0 20px;
@@ -108,7 +105,7 @@
         align-items: center;
         font-size: 11px;
         font-weight: bold;
-        color: var(--text-main);
+        color: var(--text-dark);
         cursor: pointer;
         text-decoration: none;
     }
@@ -116,19 +113,19 @@
     .nav-item i {
         font-size: 18px;
         margin-bottom: 2px;
-        color:white;
+        color: white;
     }
 
     .nav-item:hover {
-        color: var(--primary-blue);
+        color: var(--light-peach);
     }
 
     /* --- Sidebar Styling --- */
     .sidebar {
         width: var(--sidebar-width);
         height: 100vh;
-        background: black;
-        border-right: 1px solid var(--border-color);
+        background: var(--primary-purple);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
         position: fixed;
         left: 0;
         top: 0;
@@ -142,7 +139,7 @@
         padding: 25px 25px 10px;
         font-size: 11px;
         font-weight: 800;
-        color: var(--text-muted);
+        color: var(--light-peach);
         text-transform: uppercase;
         letter-spacing: 1px;
     }
@@ -155,7 +152,7 @@
 
     .nav-links a {
         text-decoration: none;
-        color: var(--text-main);
+        color: var(--white);
         display: flex;
         align-items: center;
         padding: 14px 25px;
@@ -165,15 +162,15 @@
     }
 
     .nav-links a:hover {
-        /* background: var(--light-highlight); */
-        color: var(--primary-blue);
+        background: rgba(238, 206, 185, 0.2);
+        color: var(--soft-yellow);
     }
 
     /* Active State */
     .nav-links a.active {
-        background: var(--light-highlight);
-        color: var(--primary-blue);
-        border-left: 4px solid var(--primary-blue);
+        background: var(--secondary-mauve);
+        color: var(--white);
+        border-left: 4px solid var(--light-peach);
         font-weight: 600;
     }
 
@@ -224,10 +221,9 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(1, 8, 19, 0.5);
+        background-color: rgba(43, 33, 41, 0.5);
         backdrop-filter: blur(3px);
     }
-
 
     .modalcontent {
         background-color: var(--white);
@@ -236,7 +232,7 @@
         border-radius: 12px;
         width: 400px;
         max-width: 90%;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 40px rgba(152, 125, 154, 0.25);
         animation: slideDown 0.3s ease-out;
         overflow: hidden;
         margin-left: 1133px;
@@ -256,7 +252,7 @@
 
     .modal-header {
         padding: 15px 20px;
-        background: var(--gray-bg);
+        background: var(--soft-yellow);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -266,7 +262,7 @@
     .modal-header h3 {
         margin: 0;
         font-size: 16px;
-        color: var(--text-main);
+        color: var(--text-dark);
     }
 
     .closemodal {
@@ -276,7 +272,7 @@
     }
 
     .closemodal:hover {
-        color: var(--primary-blue);
+        color: var(--primary-purple);
     }
 
     .modal-body {
@@ -296,11 +292,11 @@
     }
 
     .alert-item:hover {
-        background: var(--gray-bg);
+        background: var(--soft-yellow);
     }
 
     .alert-item.unread {
-        background: var(--light-highlight);
+        background: var(--light-peach);
     }
 
     .alert-icon {
@@ -326,7 +322,7 @@
     .alert-info .alert-text {
         margin: 0;
         font-size: 13px;
-        color: var(--text-main);
+        color: var(--text-dark);
         line-height: 1.4;
     }
 
@@ -344,7 +340,7 @@
 
     .view-all {
         font-size: 13px;
-        color: var(--primary-blue);
+        color: var(--primary-purple);
         text-decoration: none;
         font-weight: 600;
     }
@@ -355,7 +351,7 @@
         align-items: center;
         font-size: 11px;
         font-weight: bold;
-        color: var(--text-main);
+        color: var(--text-dark);
         cursor: pointer;
         text-decoration: none;
         margin-top: -6px;
@@ -370,10 +366,9 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(1, 8, 19, 0.5);
+            background-color: rgba(43, 33, 41, 0.5);
             backdrop-filter: blur(3px);
         }
-
 
         .modalcontent {
             background-color: var(--white);
@@ -382,7 +377,7 @@
             border-radius: 12px;
             width: 400px;
             max-width: 90%;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(152, 125, 154, 0.25);
             animation: slideDown 0.3s ease-out;
             overflow: hidden;
             margin-left: 20px;
@@ -399,58 +394,56 @@
     }
 
     .nav-text{
-        color:white;
+        color: white;
     }
 
-        .signin-btn {
-            background: transparent;
-            color: var(--white);
-            border: 1px solid var(--white);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            padding: 6px 10px;
-        }
+    .signin-btn {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid var(--white);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        padding: 6px 10px;
+    }
 </style>
 
 <header class="header-main">
-            <div class="logo-img">
-            <a href="/">
-                <img src="upload/DBonda-Pallet-L-MS-2443-TAN.png" alt="D" class="logo-img">
-            </a>
-        </div>
+    <div class="logo-img">
+        <a href="/">
+            <img src="upload/DBonda-Pallet-L-MS-2443-TAN.png" alt="D" class="logo-img">
+        </a>
+    </div>
 
+    <div class="nav-actions" id="headerNavActions">
+        @if(Auth::check() || session()->has('human_name'))
+            @php
+                $displayName = session('human_name');
+                if(!$displayName && Auth::check()) {
+                    $userFields = DB::table('humans')->where('id', Auth::id())->first();
+                    $displayName = $userFields ? ($userFields->first_name . ' ' . $userFields->last_name) : 'Seller';
+                }
+            @endphp
 
-<div class="nav-actions" id="headerNavActions">
-    @if(Auth::check() || session()->has('human_name'))
-        @php
-           
-            $displayName = session('human_name');
-            if(!$displayName && Auth::check()) {
-                $userFields = DB::table('humans')->where('id', Auth::id())->first();
-                $displayName = $userFields ? ($userFields->first_name . ' ' . $userFields->last_name) : 'Seller';
-            }
-        @endphp
-
-        <div class="user-dropdown" style="position: relative; display: inline-block;">
-            <div onclick="toggleUserDropdown(event)" class="user-profile-trigger" style="display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; user-select: none;">
-                <i class="fa fa-user-circle" style="color: var(--white); font-size: 22px;"></i>
-                <span class="user-profile-name" style="color: var(--white); font-weight: bold; font-size: 11px; margin-top: 3px; max-width: 90px; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                    {{ $displayName }}
-                </span>
+            <div class="user-dropdown" style="position: relative; display: inline-block;">
+                <div onclick="toggleUserDropdown(event)" class="user-profile-trigger" style="display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; user-select: none;">
+                    <i class="fa fa-user-circle" style="color: var(--white); font-size: 22px;"></i>
+                    <span class="user-profile-name" style="color: var(--white); font-weight: bold; font-size: 11px; margin-top: 3px; max-width: 90px; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                        {{ $displayName }}
+                    </span>
+                </div>
+                
+                <div id="userDropdownContent" style="display: none; position: absolute; right: 0; top: 110%; background-color: var(--white); min-width: 130px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); z-index: 150; border: 1px solid var(--border-color); border-radius: 8px; padding: 8px; text-align: center;">
+                    <a href="/" style="text-decoration: none; padding: 6px 0px; font-size: 12px; width: 100%; justify-content: center; margin-bottom: 6px; background: var(--primary-purple); color: var(--white); display: flex; align-items: center; border-radius: 5px; font-weight: bold;">
+                        Home
+                    </a>
+                    <button onclick="submitLogout()" style="border: 1px solid var(--primary-purple); color: var(--primary-purple); padding: 6px 12px; font-size: 12px; width: 100%; justify-content: center; background: transparent; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                        Logout
+                    </button>
+                </div>
             </div>
-            
-            <div id="userDropdownContent" style="display: none; position: absolute; right: 0; top: 110%; background-color: var(--white); min-width: 130px; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); z-index: 150; border: 1px solid var(--light-highlight); border-radius: 8px; padding: 8px; text-align: center;">
-                <a href="/" style="text-decoration: none; padding: 6px 0px; font-size: 12px; width: 100%; justify-content: center; margin-bottom: 6px; background: var(--primary-blue); color: var(--white); display: flex; align-items: center; border-radius: 5px; font-weight: bold;">
-                    Home
-                </a>
-                <button onclick="submitLogout()" style="border: 1px solid #071835; color: var(--primary-blue); padding: 6px 12px; font-size: 12px; width: 100%; justify-content: center; background: transparent; border-radius: 5px; font-weight: bold; cursor: pointer;">
-                    Logout
-                </button>
-            </div>
-        </div>
-    @else
-      <button onclick="openLoginModal()" class="nav-btn signin-btn">Sign In</button>
-    @endif
-</div>
+        @else
+            <button onclick="openLoginModal()" class="nav-btn signin-btn">Sign In</button>
+        @endif
+    </div>
 </header>
 
 <nav class="sidebar">
@@ -487,7 +480,7 @@
         </a>
 
         <a href="/selleroffers" class="{{ Request::is('selleroffers') ? 'active' : '' }}">
-           <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="material-symbols-outlined">shopping_bag</span>
             <span class="nav-text">Offers</span>
         </a>
 
@@ -514,8 +507,7 @@
                     <i class="fa fa-exclamation-triangle"></i>
                 </div>
                 <div class="alert-info">
-                    <p class="alert-text"><strong>Low Stock Alert:</strong> "Ceylon Cinnamon Pack" is running low (Only
-                        3 left).</p>
+                    <p class="alert-text"><strong>Low Stock Alert:</strong> "Ceylon Cinnamon Pack" is running low (Only 3 left).</p>
                     <span class="alert-time">Just now</span>
                 </div>
             </div>
@@ -529,21 +521,19 @@
                     <span class="alert-time">2 hours ago</span>
                 </div>
             </div>
-
-
         </div>
         <div class="modal-footer">
             <a href="#" class="view-all">Mark all as read</a>
         </div>
     </div>
 </div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const alertsBtn = document.querySelector('a[href="#"].nav-item');
     const modal = document.getElementById('alertsModal');
     const closeBtn = document.querySelector('.closemodal');
 
-    
     if (alertsBtn) {
         alertsBtn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -564,52 +554,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-   
-    function toggleUserDropdown(event) {
-        event.stopPropagation();
-        const dropdown = document.getElementById('userDropdownContent');
-        if (dropdown) {
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
+function toggleUserDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('userDropdownContent');
+    if (dropdown) {
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
     }
+}
 
-   
-    window.addEventListener('click', function() {
-        const dropdown = document.getElementById('userDropdownContent');
-        if (dropdown) { dropdown.style.display = 'none'; }
-    });
+window.addEventListener('click', function() {
+    const dropdown = document.getElementById('userDropdownContent');
+    if (dropdown) { dropdown.style.display = 'none'; }
+});
 
+function submitLogout() {
+    const tokenEl = document.querySelector('meta[name="csrf-token"]');
     
-    function submitLogout() {
-        const tokenEl = document.querySelector('meta[name="csrf-token"]');
-        
-        fetch('/custom-logout', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'X-CSRF-TOKEN': tokenEl ? tokenEl.getAttribute('content') : ''
-            }
-        })
-        .then(res => {
-            if (!res.ok) {
-                return res.text().then(text => { throw new Error(text) });
-            }
-            return res.json();
-        })
-        .then(data => {
-            if(data.success) {
-                alert('Logged out successfully!');
-                window.location.href = '/';
-            } else {
-                alert('Logout failed. Please try again.');
-            }
-        })
-        .catch(err => {
-            console.error('Error:', err);
-            alert('Server side error occurred during logout.');
-        });
-    }
-
+    fetch('/custom-logout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': tokenEl ? tokenEl.getAttribute('content') : ''
+        }
+    })
+    .then(res => {
+        if (!res.ok) {
+            return res.text().then(text => { throw new Error(text) });
+        }
+        return res.json();
+    })
+    .then(data => {
+        if(data.success) {
+            alert('Logged out successfully!');
+            window.location.href = '/';
+        } else {
+            alert('Logout failed. Please try again.');
+        }
+    })
+    .catch(err => {
+        console.error('Error:', err);
+        alert('Server side error occurred during logout.');
+    });
+}
 </script>
